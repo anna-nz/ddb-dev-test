@@ -65,13 +65,17 @@ const Home: React.FC = () => {
           "w-full h-fit flex content-end items-start justify-center py-2 px-20"
         }
       >
-        <div className={"bg-white w-full h-full rounded-lg p-2 h-60"}>
+        <div className={"bg-white w-full h-full rounded-lg p-2 h-auto"}>
           <p className={"text-center font-bold p-3"}>LIST OF MESSAGES</p>
           <ul>
-            <li className={"hover:bg-slate-100 hover:text-sky-600 p-2 rounded-lg cursor-pointer"} >message 1</li>
-            <li>message 2</li>
-            <li>message 3</li>
-            <li>etc</li>
+            {notifications.map((notification) => (
+              <li
+                key={notification.id}
+                className={"hover:bg-slate-100 hover:text-sky-600 p-2 rounded-lg cursor-pointer"}
+              >
+                {notification.title}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
